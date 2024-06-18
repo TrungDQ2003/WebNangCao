@@ -19,6 +19,14 @@
         .input_color{
             color: black;
         }
+
+        .center{
+            margin: auto;
+            width: 50%;
+            text-align: center;
+            margin-top: 30px;
+            border: 3px solid white;
+        }
     </style>
   </head>
   <body>
@@ -49,6 +57,24 @@
                         <input type="submit" class="btn btn-primary" name="submit" value="Add Category">
                     </form>
                 </div>
+
+                <table class="center">
+                    <tr>
+                        <td>Category Name</td>
+                        <td>Action</td>
+                    </tr>
+
+                    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $data): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                    <tr>
+                        <td><?php echo e($data->category_name); ?></td>
+                        <td>
+                            <a onclick="return confirm('Are You Sure To Delete This')" class="btn btn-danger" href="<?php echo e(url('delete_category',$data->id)); ?>">Delete</a>
+                        </td>
+                    </tr>
+
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </table>
             </div>
         </div>  
     <!-- container-scroller -->
