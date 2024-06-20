@@ -17,7 +17,9 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-route::get('/',[HomeController::class,'index']);
+/*Admin Controller */
+
+route::get('/', [HomeController::class, 'index']);
 
 Route::middleware([
     'auth:sanctum',
@@ -29,36 +31,40 @@ Route::middleware([
     })->name('dashboard');
 });
 
-route::get('/redirect',[HomeController::class,'redirect']);
+route::get('/redirect', [HomeController::class, 'redirect']);
 
-route::get('/view_category',[AdminController::class,'view_category']);
+route::get('/view_category', [AdminController::class, 'view_category']);
 
-route::post('/add_category',[AdminController::class,'add_category']);
+route::post('/add_category', [AdminController::class, 'add_category']);
 
-route::get('/delete_category/{id}',[AdminController::class,'delete_category']);
+route::get('/delete_category/{id}', [AdminController::class, 'delete_category']);
 
-route::get('/view_product',[AdminController::class,'view_product']);
+route::get('/view_product', [AdminController::class, 'view_product']);
 
-route::post('/add_product',[AdminController::class,'add_product']);
+route::post('/add_product', [AdminController::class, 'add_product']);
 
-route::get('/show_product',[AdminController::class,'show_product']);
+route::get('/show_product', [AdminController::class, 'show_product']);
 
-route::get('/delete_product/{id}',[AdminController::class,'delete_product']);
+route::get('/delete_product/{id}', [AdminController::class, 'delete_product']);
 
-route::get('/update_product/{id}',[AdminController::class,'update_product']);
+route::get('/update_product/{id}', [AdminController::class, 'update_product']);
 
-route::post('/update_product_confirm/{id}',[AdminController::class,'update_product_confirm']);
+route::post('/update_product_confirm/{id}', [AdminController::class, 'update_product_confirm']);
 
-route::get('/product_details/{id}',[HomeController::class,'product_details']);
+route::get('/order', [AdminController::class, 'order']);
 
-route::post('/add_cart/{id}',[HomeController::class,'add_cart']);
 
-route::get('/show_cart',[HomeController::class,'show_cart']);
+/*Home Controller */
+route::get('/product_details/{id}', [HomeController::class, 'product_details']);
 
-route::get('/remove_cart/{id}',[HomeController::class,'remove_cart']);
+route::post('/add_cart/{id}', [HomeController::class, 'add_cart']);
 
-route::get('/cash_order',[HomeController::class,'cash_order']);
+route::get('/show_cart', [HomeController::class, 'show_cart']);
 
-route::get('/stripe/{totalprice}',[HomeController::class,'stripe']);
+route::get('/remove_cart/{id}', [HomeController::class, 'remove_cart']);
 
-route::post('stripe/{totalprice}',[HomeController::class,'stripePost'])->name('stripe.post');
+route::get('/cash_order', [HomeController::class, 'cash_order']);
+
+route::get('/stripe/{totalprice}', [HomeController::class, 'stripe']);
+
+route::post('stripe/{totalprice}', [HomeController::class, 'stripePost'])->name('stripe.post');
