@@ -89,6 +89,14 @@
               <span class="menu-title">Category</span>
             </a>
           </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="<?php echo e(url('order')); ?>">
+              <span class="menu-icon">
+                <i class="mdi mdi-playlist-play"></i>
+              </span>
+              <span class="menu-title">Order</span>
+            </a>
+          </li>
           
         </ul>
       </nav><?php /**PATH C:\GitHub\WebNangCao\Laravel Project\resources\views/admin/sidebar.blade.php ENDPATH**/ ?>
