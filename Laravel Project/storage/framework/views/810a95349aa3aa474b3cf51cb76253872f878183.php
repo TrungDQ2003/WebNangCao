@@ -109,7 +109,7 @@
             <div>
                 <h1 style="font-size: 25px; padding-bottom: 15px">Proceed to Order</h1>
                 <a href="<?php echo e(url('cash_order')); ?>" class="btn btn-danger">Cash On Delivery</a>
-                <a href="" class="btn btn-danger">Pay Using Card</a>
+                <a href="<?php echo e(url('stripe', $totalprice)); ?>" class="btn btn-danger">Pay Using Card</a>
             </div>
         </div>
 
