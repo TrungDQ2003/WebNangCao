@@ -65,7 +65,7 @@ class HomeController extends Controller
 
             
             $cart->image=$product->image;
-            $cart->Product_id=$product->id;
+            $cart->product_id=$product->id;
             $cart->quantity=$request->quantity;
             $cart->save();
             return redirect()->back();

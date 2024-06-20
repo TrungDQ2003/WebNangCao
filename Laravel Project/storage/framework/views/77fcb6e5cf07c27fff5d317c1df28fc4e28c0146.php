@@ -17,4 +17,4 @@
     <?php echo $__env->make('admin.script', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <!-- End custom js for this page -->
   </body>
-</html>admin/<?php /**PATH C:\GitHub\WebNangCao\Laravel Project\resources\views/admin/home.blade.php ENDPATH**/ ?>
+</html><?php /**PATH C:\GitHub\WebNangCao\Laravel Project\resources\views/admin/home.blade.php ENDPATH**/ ?>
