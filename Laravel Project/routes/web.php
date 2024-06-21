@@ -55,6 +55,10 @@ route::get('/order', [AdminController::class, 'order']);
 
 route::get('/delivered/{id}', [AdminController::class, 'delivered']);
 
+route::get('/search', [AdminController::class, 'searchdata']);
+
+
+
 
 /*Home Controller */
 route::get('/product_details/{id}', [HomeController::class, 'product_details']);
