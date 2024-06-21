@@ -24,7 +24,7 @@
             background-color: skyblue;
         }
 
-        .img_size{
+        .img_size {
             width: 172px;
             height: 216px;
         }
@@ -44,16 +44,17 @@
 
                 <table class="table_deg">
                     <tr class="th_deg">
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Address</th>
-                        <th>Phone</th>
-                        <th>Product title</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Payment status</th>
-                        <th>Delivery status</th>
-                        <th>Image</th>
+                        <th style="padding: 10px;">Name</th>
+                        <th style="padding: 10px;">Email</th>
+                        <th style="padding: 10px;">Address</th>
+                        <th style="padding: 10px;">Phone</th>
+                        <th style="padding: 10px;">Product title</th>
+                        <th style="padding: 10px;">Quantity</th>
+                        <th style="padding: 10px;">Price</th>
+                        <th style="padding: 10px;">Payment status</th>
+                        <th style="padding: 10px;">Delivery status</th>
+                        <th style="padding: 10px;">Image</th>
+                        <th style="padding: 10px;">Delivered</th>
                     </tr>
 
                     <?php $__currentLoopData = $order; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $order): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -70,6 +71,17 @@
                         <td><?php echo e($order->delivery_status); ?></td>
                         <td>
                             <img class="img_size" src="/product/<?php echo e($order->image); ?>">
+                        </td>
+
+                        <td>
+                            <?php if($order->delivery_status=='processing'): ?>
+                            <a href="<?php echo e(url('delivered', $order->id)); ?>" onclick="return confirm('Are you sure this product is delivered')" class="btn btn-primary">Delivered</a>
+
+                            <?php else: ?>
+
+                            <p style="color: green">Delivered</p>
+
+                            <?php endif; ?>
                         </td>
                     </tr>
 
