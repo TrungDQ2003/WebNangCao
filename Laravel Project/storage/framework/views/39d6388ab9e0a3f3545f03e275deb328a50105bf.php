@@ -4,6 +4,16 @@
          <h2>
             Our <span>products</span>
          </h2>
+
+         <br><br>
+
+         <div>
+            <form action="<?php echo e(url('product_search')); ?>" method="GET">
+               <?php echo csrf_field(); ?>
+               <input style="width: 500px;" type="text" name="search" placeholder="Search for something">
+               <input type="submit" value="search">
+            </form>
+         </div>
       </div>
       <div class="row">
 
