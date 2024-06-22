@@ -15,6 +15,15 @@
             </form>
          </div>
       </div>
+
+      <?php if(session()->has('message')): ?>
+      <div class="alert alert-success">
+         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+         <?php echo e(session()->get('message')); ?>
+
+      </div>
+      <?php endif; ?>
+
       <div class="row">
 
          <?php $__currentLoopData = $product; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $products): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -60,7 +69,7 @@
 
                   </h6>
 
-                  <h6 style="text-decoration: linethrough; color:blue">
+                  <h6 style="text-decoration: line-through; color:blue">
                      Price
                      <br>
                      $<?php echo e($products->price); ?>

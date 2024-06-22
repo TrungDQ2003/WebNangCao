@@ -2,7 +2,6 @@
 <html>
 
 <head>
-    <!-- Basic -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Mobile Metas -->
@@ -14,13 +13,13 @@
     <link rel="shortcut icon" href="images/favicon.png" type="">
     <title>Famms - Fashion HTML Template</title>
     <!-- bootstrap core css -->
-    <link rel="stylesheet" type="text/css" href="home/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('home/css/bootstrap.css')); ?>" />
     <!-- font awesome style -->
-    <link href="home/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="<?php echo e(asset('home/css/font-awesome.min.css')); ?>" rel="stylesheet" />
     <!-- Custom styles for this template -->
-    <link href="home/css/style.css" rel="stylesheet" />
+    <link href="<?php echo e(asset('home/css/style.css')); ?>" rel="stylesheet" />
     <!-- responsive style -->
-    <link href="home/css/responsive.css" rel="stylesheet" />
+    <link href="<?php echo e(asset('home/css/responsive.css')); ?>" rel="stylesheet" />
 
     <style>
         .center {
@@ -30,11 +29,13 @@
             text-align: center;
         }
 
-        table,th,td{
+        table,
+        th,
+        td {
             border: 1px solid black;
         }
 
-        .th_deg{
+        .th_deg {
             padding: 10px;
             background-color: skyblue;
             font-size: 20px;
@@ -77,7 +78,7 @@
                     <?php if($order->delivery_status=='processing'): ?>
 
                     <a onclick="return confirm('Are You Sure To Cancel this Order !!!')" class="btn btn-danger" href="<?php echo e(url('cancel_order', $order->id)); ?>">Cancel Order</a>
-                    
+
                     <?php else: ?>
                     <p style="color: blue;">Not Allowed</p>
 

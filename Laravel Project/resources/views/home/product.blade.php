@@ -15,6 +15,14 @@
             </form>
          </div>
       </div>
+
+      @if(session()->has('message'))
+      <div class="alert alert-success">
+         <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+         {{session()->get('message')}}
+      </div>
+      @endif
+
       <div class="row">
 
          @foreach($product as $products)
@@ -58,7 +66,7 @@
                      ${{$products->discount_price}}
                   </h6>
 
-                  <h6 style="text-decoration: linethrough; color:blue">
+                  <h6 style="text-decoration: line-through; color:blue">
                      Price
                      <br>
                      ${{$products->price}}
